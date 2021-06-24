@@ -9,4 +9,8 @@
     <string name="skip_text_view">Skip</string>
     <string name="sign_up_text_view">Sign up</string>
     <string name="image_description_login">Arnold Schwarzenegger</string>
+    <string name="exercises_menu_title">Exercises</string>
+    <string name="programs_menu_title">Programs</string>
+    <string name="nutrition_menu_title">Nutrition</string>
+    <string name="settings_menu_title">Settings</string>
 </resources>

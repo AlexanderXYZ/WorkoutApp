@@ -3,20 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/mainFragment">
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.buslaev.workoutapp.screens.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_startSettingsFragment"
-            app:destination="@id/startSettingsFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
     <fragment
         android:id="@+id/exercisesFragment"
         android:name="com.buslaev.workoutapp.screens.exercises.ExercisesFragment"
@@ -72,15 +60,6 @@
         tools:layout="@layout/fragment_progress" >
         <action
             android:id="@+id/action_progressFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/startSettingsFragment"
-        android:name="com.buslaev.workoutapp.screens.startsettings.StartSettingsFragment"
-        android:label="fragment_start_settings"
-        tools:layout="@layout/fragment_start_settings" >
-        <action
-            android:id="@+id/action_startSettingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
