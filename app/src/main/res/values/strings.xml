@@ -2,4 +2,11 @@
     <string name="app_name">WorkoutApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_hint_username">Username</string>
+    <string name="default_hint_password">Password</string>
+    <string name="forgot_password_text_view">Forgot password?</string>
+    <string name="or_text_view">OR</string>
+    <string name="skip_text_view">Skip</string>
+    <string name="sign_up_text_view">Sign up</string>
+    <string name="image_description_login">Arnold Schwarzenegger</string>
 </resources>
