@@ -1,27 +1,20 @@
 package com.buslaev.workoutapp
 
-import android.graphics.drawable.ColorDrawable
-import android.os.Build
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.buslaev.workoutapp.data.initFirebase
 import com.buslaev.workoutapp.databinding.ActivityMainBinding
 import com.buslaev.workoutapp.utilits.APP_ACTIVITY
-import com.mikepenz.materialdrawer.Drawer
-import com.mikepenz.materialdrawer.DrawerBuilder
-import com.mikepenz.materialdrawer.model.DividerDrawerItem
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
-import com.mikepenz.materialdrawer.util.setupWithNavController
+import com.buslaev.workoutapp.utilits.PREFS
+import com.buslaev.workoutapp.utilits.PREF_SETTINGS
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,12 +42,13 @@ class MainActivity : AppCompatActivity() {
         listener =
             NavController.OnDestinationChangedListener { controller, destination, arguments ->
                 if (destination.id == R.id.exercisesFragment) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.black)))
-                    }
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                        supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.black)))
+//                    }
                 }
             }
         APP_ACTIVITY = this
+        PREFS = getSharedPreferences(PREF_SETTINGS, Context.MODE_PRIVATE)
 
     }
 
@@ -68,12 +62,10 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         navController.removeOnDestinationChangedListener(listener)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-
-
 
 
 }

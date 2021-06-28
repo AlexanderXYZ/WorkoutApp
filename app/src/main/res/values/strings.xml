@@ -13,4 +13,9 @@
     <string name="programs_menu_title">Programs</string>
     <string name="nutrition_menu_title">Nutrition</string>
     <string name="settings_menu_title">Settings</string>
+    <string name="progress_menu_title">Progress</string>
+    <string name="weight_title_progress">Weight</string>
+    <string name="height_title_progress">Height</string>
+    <string name="fat_title_progress">Fat %</string>
+    <string name="muscle_title_progress">Muscle %</string>
 </resources>

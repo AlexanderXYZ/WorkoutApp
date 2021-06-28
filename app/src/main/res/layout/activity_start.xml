@@ -144,7 +144,7 @@
         android:textSize="@dimen/normal_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/huge_margin"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView

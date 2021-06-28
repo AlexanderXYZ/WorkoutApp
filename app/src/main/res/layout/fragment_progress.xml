@@ -1,14 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.progress.ProgressFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/weight_tv"
+        style="@style/text_view_progress"
+        android:text="@string/weight_title_progress"
+        app:layout_constraintBottom_toBottomOf="@id/input_weight_et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/input_weight_et"
+        app:layout_constraintTop_toTopOf="@id/input_weight_et" />
+
+    <TextView
+        android:id="@+id/height_tv"
+        style="@style/text_view_progress"
+        android:text="@string/height_title_progress"
+        app:layout_constraintBottom_toBottomOf="@id/input_height_et"
+        app:layout_constraintEnd_toStartOf="@id/input_height_et"
+        app:layout_constraintTop_toTopOf="@id/input_height_et" />
+
+    <TextView
+        android:id="@+id/fat_tv"
+        style="@style/text_view_progress"
+        android:text="@string/fat_title_progress"
+        app:layout_constraintBottom_toBottomOf="@id/input_fat_et"
+        app:layout_constraintEnd_toStartOf="@id/input_fat_et"
+        app:layout_constraintTop_toTopOf="@id/input_fat_et" />
+
+    <TextView
+        android:id="@+id/muscle_tv"
+        style="@style/text_view_progress"
+        android:text="@string/muscle_title_progress"
+        app:layout_constraintBottom_toBottomOf="@id/input_muscle_et"
+        app:layout_constraintEnd_toStartOf="@id/input_muscle_et"
+        app:layout_constraintTop_toTopOf="@id/input_muscle_et" />
+
+    <EditText
+        android:id="@+id/input_weight_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/huge_margin"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_height_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/input_weight_et"
+        app:layout_constraintStart_toStartOf="@id/input_weight_et"
+        app:layout_constraintTop_toBottomOf="@id/input_weight_et" />
+
+    <EditText
+        android:id="@+id/input_fat_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/input_height_et"
+        app:layout_constraintStart_toStartOf="@id/input_height_et"
+        app:layout_constraintTop_toBottomOf="@id/input_height_et" />
+
+    <EditText
+        android:id="@+id/input_muscle_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/input_fat_et"
+        app:layout_constraintStart_toStartOf="@id/input_fat_et"
+        app:layout_constraintTop_toBottomOf="@id/input_fat_et" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

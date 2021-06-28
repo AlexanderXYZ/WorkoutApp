@@ -12,6 +12,9 @@
             android:id="@+id/nutritionFragment"
             android:title="@string/nutrition_menu_title" />
         <item
+            android:id="@+id/progressFragment"
+            android:title="@string/progress_menu_title" />
+        <item
             android:id="@+id/settingsFragment"
             android:title="@string/settings_menu_title" />
     </group>
