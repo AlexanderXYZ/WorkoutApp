@@ -6,7 +6,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 lateinit var FIRESTORE: FirebaseFirestore
 
-const val EXERCISES_COLLECTION = "exercises"
 
 fun initFirebase() {
     FIRESTORE = FirebaseFirestore.getInstance()

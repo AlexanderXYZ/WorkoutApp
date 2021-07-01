@@ -1,6 +1,7 @@
 package com.buslaev.workoutapp.screens.exercises
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,10 @@ class ExercisesAdapter(
         View.OnClickListener {
         val title: TextView = itemView.findViewById(R.id.title_muscle_item)
         val image: ImageView = itemView.findViewById(R.id.image_muscle_item)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
 
         override fun onClick(p0: View?) {
             val position = adapterPosition
