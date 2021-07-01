@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_exercisesFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_exercisesFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -70,5 +73,14 @@
         <action
             android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.buslaev.workoutapp.screens.exercise.ExerciseFragment"
+        android:label="fragment_exercise"
+        tools:layout="@layout/fragment_exercise" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
     </fragment>
 </navigation>

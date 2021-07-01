@@ -22,14 +22,15 @@ class ExercisesAdapter(
 
         override fun onClick(p0: View?) {
             val position = adapterPosition
+            val exercise = mList[position].title
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                listener.onItemClick(position,exercise)
             }
         }
     }
 
     interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(position: Int,exercise:String)
     }
 
     private var mList = emptyList<ExerciseData>()

@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.buslaev.workoutapp.R
 import com.buslaev.workoutapp.databinding.FragmentExercisesBinding
 import com.buslaev.workoutapp.utilits.APP_ACTIVITY
 
@@ -45,8 +47,9 @@ class ExercisesFragment : Fragment(), ExercisesAdapter.OnItemClickListener {
 
         mViewModel = ViewModelProvider(this).get(ExercisesViewModel::class.java)
 
-        mObserver = Observer {
-            mAdapter.setList(it)
+        mObserver = Observer { list ->
+            val res = list.sortedBy { it.id }
+            mAdapter.setList(res)
         }
         mViewModel.data.observe(viewLifecycleOwner, mObserver)
     }
@@ -57,8 +60,13 @@ class ExercisesFragment : Fragment(), ExercisesAdapter.OnItemClickListener {
         mRecyclerView.adapter = null
     }
 
-    override fun onItemClick(position: Int) {
-
+    override fun onItemClick(position: Int, exercise: String) {
+        val bundle = Bundle()
+        bundle.putString("exercise", exercise)
+        APP_ACTIVITY.navController.navigate(
+            R.id.action_exercisesFragment_to_exerciseFragment,
+            bundle
+        )
     }
 
 }
