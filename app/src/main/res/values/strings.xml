@@ -18,4 +18,15 @@
     <string name="height_title_progress">Height</string>
     <string name="fat_title_progress">Fat %</string>
     <string name="muscle_title_progress">Muscle %</string>
+    <string name="own_programs_title">Own programs</string>
+    <string name="other_programs_title">Other programs</string>
+    <string name="add_new_program_content_description">Add new program</string>
+    <string name="default_title">Title</string>
+    <string name="add_exercise_btn">add exercise</string>
+
+
+    <string-array name="exercises">
+        <item>Chest</item>
+        <item>Back</item>
+    </string-array>
 </resources>

@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_programsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_customProgramFragment"
+            app:destination="@id/customProgramFragment" />
     </fragment>
     <fragment
         android:id="@+id/nutritionFragment"
@@ -82,5 +85,26 @@
         <action
             android:id="@+id/action_exerciseFragment_to_exercisesFragment"
             app:destination="@id/exercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customProgramFragment"
+        android:name="com.buslaev.workoutapp.screens.programs.custom.CustomProgramFragment"
+        android:label="fragment_custom_program"
+        tools:layout="@layout/fragment_custom_program" >
+        <action
+            android:id="@+id/action_customProgramFragment_to_programsFragment"
+            app:destination="@id/programsFragment" />
+        <action
+            android:id="@+id/action_customProgramFragment_to_allExercisesFragment"
+            app:destination="@id/allExercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allExercisesFragment"
+        android:name="com.buslaev.workoutapp.screens.programs.custom.allExercises.AllExercisesCustomFragment"
+        android:label="fragment_all_exercises"
+        tools:layout="@layout/fragment_all_exercises" >
+        <action
+            android:id="@+id/action_allExercisesFragment_to_customProgramFragment"
+            app:destination="@id/customProgramFragment" />
     </fragment>
 </navigation>

@@ -1,8 +1,11 @@
 package com.buslaev.workoutapp
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -15,6 +18,7 @@ import com.buslaev.workoutapp.databinding.ActivityMainBinding
 import com.buslaev.workoutapp.utilits.APP_ACTIVITY
 import com.buslaev.workoutapp.utilits.PREFS
 import com.buslaev.workoutapp.utilits.PREF_SETTINGS
+import com.buslaev.workoutapp.utilits.WHICH_PROGRAM
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        APP_ACTIVITY = this
 
         navController = findNavController(R.id.nav_host)
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -41,13 +46,24 @@ class MainActivity : AppCompatActivity() {
 
         listener =
             NavController.OnDestinationChangedListener { controller, destination, arguments ->
-                if (destination.id == R.id.exercisesFragment) {
+                if (destination.id == R.id.programsFragment) {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //                        supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.black)))
 //                    }
+//                    val builder = AlertDialog.Builder(this)
+//                    builder.apply {
+//                        setTitle("Choose programs")
+//                        setPositiveButton("Own programs") { dialogInterface, which ->
+//                            WHICH_PROGRAM = "own"
+//                        }
+//                        setNeutralButton("Other programs") { dialogInterface, which ->
+//                            WHICH_PROGRAM = "other"
+//                        }
+//                    }
+//                    val alertDialog = builder.create()
+//                    alertDialog.show()
                 }
             }
-        APP_ACTIVITY = this
         PREFS = getSharedPreferences(PREF_SETTINGS, Context.MODE_PRIVATE)
 
     }

@@ -18,9 +18,18 @@ class WorkoutFirebase {
     private val exercisesCollection = firestore.collection(EXERCISES_COLLECTION)
     private val chestCollection = firestore.collection(CHEST_COLLECTION)
 
-    suspend fun getAllExercises(): List<ExerciseData> {
+    suspend fun getNamesExercises(): List<ExerciseData> {
         return try {
             exercisesCollection.get().await().toObjects(ExerciseData::class.java)
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    suspend fun getAllExercises(): List<ExerciseData> {
+        return try {
+            //Need add other exercises later
+            chestCollection.get().await().toObjects(ExerciseData::class.java)
         } catch (e: Exception) {
             emptyList()
         }
